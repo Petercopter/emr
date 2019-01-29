@@ -1,0 +1,32 @@
+.border
+  .bg-light.font-weight-bold.p-2 Emergency Transfer Summary (Form 34L-D)
+  .border-bottom.border-top.font-weight-bold.p-2 Transferring Facility
+  .border-bottom.d-flex
+    .p-2.border-right
+      p Name
+      = @patient.facility.name
+  .border-bottom.font-weight-bold.p-2 Patient Information
+  .border-bottom.d-flex
+    .p-2.border-right
+      p First Name
+      = @patient.first_name
+    .p-2.border-right
+      p Middle Name
+      = @patient.middle_name
+    .p-2.border-right
+      p Last Name
+      = @patient.last_name
+    .p-2.border-right
+      p
+        | Medical Record
+        br
+        | (MR)
+      = @patient.mr
+  .p-2
+    p.font-weight-bold Summary
+    ' This #{@patient.age} years old #{@patient.gender} was admitted to
+    ' #{@patient.facility.name} on #{@admission_date}, at #{@admission_time}
+    ' due to #{@admission_diagnoses}. The observed symptoms on admission were #{@symptoms}.
+    ' Upon asking about known allergies, the patient disclosed #{@allergies}.
+    ' Upon asking about chronic conditions, the patient disclosed #{@chronic_conditions}.
+    ' The patient was administered with #{@medications}.

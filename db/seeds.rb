@@ -53,4 +53,7 @@ admission.diagnoses.find_or_create_by(
 )
 
 admission.observations.find_or_create_by(description: 'No soft tissues were damaged')
-admission.symptoms.find_or_create_by(description: 'severe pain, swelling and limited bending of the joint')
+
+admission.symptoms.find_or_create_by(description: 'severe pain')
+admission.symptoms.find_or_create_by(description: 'swelling')
+admission.symptoms.find_or_create_by(description: 'limited bending of the joint')
