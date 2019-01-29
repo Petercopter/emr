@@ -22,7 +22,6 @@ describe Patient do
       is_expected.to validate_presence_of :first_name
       is_expected.to validate_presence_of :gender
       is_expected.to validate_presence_of :last_name
-      is_expected.to validate_presence_of :middle_name
       is_expected.to validate_presence_of :mr
     end
   end

@@ -16,7 +16,6 @@ class Patient < ApplicationRecord
             :first_name,
             :gender,
             :last_name,
-            :middle_name,
             :mr,
             presence: true
 end
