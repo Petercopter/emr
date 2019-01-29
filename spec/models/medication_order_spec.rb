@@ -7,4 +7,13 @@ describe MedicationOrder do
       is_expected.to belong_to(:patient).inverse_of(:medications)
     end
   end
+
+  describe 'validations' do
+    it do
+      is_expected.to validate_presence_of :dosage
+      is_expected.to validate_presence_of :name
+      is_expected.to validate_presence_of :route
+      is_expected.to validate_presence_of :unit
+    end
+  end
 end
