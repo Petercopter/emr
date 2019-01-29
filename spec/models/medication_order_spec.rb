@@ -12,6 +12,7 @@ describe MedicationOrder do
     it do
       is_expected.to validate_presence_of :dosage
       is_expected.to validate_presence_of :name
+      is_expected.to validate_presence_of :necessity
       is_expected.to validate_presence_of :route
       is_expected.to validate_presence_of :unit
     end

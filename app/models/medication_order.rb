@@ -7,6 +7,7 @@ class MedicationOrder < ApplicationRecord
 
   validates :dosage,
             :name,
+            :necessity,
             :route,
             :unit,
             presence: true
