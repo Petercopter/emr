@@ -24,9 +24,13 @@
       = @patient.mr
   .p-2
     p.font-weight-bold Summary
-    ' This #{@patient.age} years old #{@patient.gender} was admitted to
-    ' #{@patient.facility.name} on #{@admission_date}, at #{@admission_time}
-    ' due to #{@admission_diagnoses}. The observed symptoms on admission were #{@symptoms}.
-    ' Upon asking about known allergies, the patient disclosed #{@allergies}.
-    ' Upon asking about chronic conditions, the patient disclosed #{@chronic_conditions}.
-    ' The patient was administered with #{@medications}.
+    p
+      ' This #{@patient.age} years old #{@patient.gender} was admitted to
+      ' #{@patient.facility.name} on #{@admission_date}, at #{@admission_time}
+      ' due to #{@admission_diagnoses}. The observed symptoms on admission were #{@symptoms}.
+      ' Upon asking about known allergies, the patient disclosed #{@allergies}.
+      ' Upon asking about chronic conditions, the patient disclosed #{@chronic_conditions}.
+      ' The patient was administered with #{@medications}.
+    p
+      ' The staff performed #{@diagnostic_procedures}, revealing #{@patient_diagnoses}.
+      ' Our team proceeded to #{@treatments}.

@@ -28,9 +28,21 @@ patient.chronic_conditions.find_or_create_by(
   description: 'Asthma'
 )
 
+patient.diagnoses.find_or_create_by(
+  coding_system: 'S',
+  code: '82.101A',
+  description: 'a closed fracture in the right tibia'
+)
+
+patient.diagnostic_procedures.find_or_create_by(
+  description: 'an exploratory radiography',
+  moment: (1.month.ago + 1.hour)
+)
+
 patient.medications.find_or_create_by(
   dosage: '500mg',
   name: 'Acetaminophen',
+  necessity: 'relieve pain',
   route: 'po',
   unit: 'mg',
   order_frequency: order_frequency_q4hr
@@ -39,9 +51,15 @@ patient.medications.find_or_create_by(
 patient.medications.find_or_create_by(
   dosage: '500',
   name: 'Naproxen',
+  necessity: 'relieve swelling',
   route: 'po',
   unit: 'mg',
   order_frequency: order_frequency_q6hr
+)
+
+patient.treatments.find_or_create_by(
+  description: 'temporary bracing the right leg',
+  necessity: 'restrict the motion'
 )
 
 admission = Admission.find_or_create_by(moment: 1.month.ago, patient: patient)
