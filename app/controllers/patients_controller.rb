@@ -9,13 +9,18 @@ class PatientsController < ApplicationController
     @admission_date = @patient.admission.moment.to_date.to_formatted_s(:long)
     @admission_time = @patient.admission.moment.strftime('%l:%M%P')
     @admission_diagnoses = @patient.admission.diagnoses.map do |diagnosis|
-      [diagnosis.description, ['(', diagnosis.coding_system, diagnosis.code, ')'].join].join(' ')
+      [
+        diagnosis.description,
+        ['(', diagnosis.coding_system, diagnosis.code, ')'].join
+      ].join(' ')
     end.join(', ')
 
-    @symptoms = @patient.admission.symptoms.map(&:description).join(', ')
     @allergies = @patient.allergies.map(&:description).to_sentence
     @chronic_conditions = @patient.chronic_conditions.map do |diagnosis|
-      [diagnosis.description, ['(', diagnosis.coding_system, diagnosis.code, ')'].join].join(' ')
+      [
+        diagnosis.description,
+        ['(', diagnosis.coding_system, diagnosis.code, ')'].join
+      ].join(' ')
     end.join(', ')
 
     @diagnostic_procedures = @patient.diagnostic_procedures.map do |diagnostic_procedure|
@@ -44,11 +49,20 @@ class PatientsController < ApplicationController
     end.to_sentence
 
     @patient_diagnoses = @patient.diagnoses.map do |diagnosis|
-      [diagnosis.description, ['(', diagnosis.coding_system, diagnosis.code, ')'].join].join(' ')
+      [
+        diagnosis.description,
+        ['(', diagnosis.coding_system, diagnosis.code, ')'].join
+      ].join(' ')
     end.to_sentence
 
+    @symptoms = @patient.admission.symptoms.map(&:description).to_sentence
+
     @treatments = @patient.treatments.map do |treatment|
-      [treatment.description, 'to', treatment.necessity].join(' ')
+      [
+        treatment.description,
+        'to',
+        treatment.necessity
+      ].join(' ')
     end.to_sentence
   end
 

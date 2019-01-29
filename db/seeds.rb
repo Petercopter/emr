@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 facility = Facility.find_or_create_by(name: 'Blue Alps Ski Camp')
 order_frequency_q4hr = OrderFrequency.find_or_create_by(unit: 'hr', value: 'q4')
 order_frequency_q6hr = OrderFrequency.find_or_create_by(unit: 'hr', value: 'q6')
