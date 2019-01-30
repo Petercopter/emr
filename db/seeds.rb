@@ -73,7 +73,7 @@ admission.diagnoses.find_or_create_by(
   description: 'a fracture of upper end of the right tibia'
 )
 
-admission.observations.find_or_create_by(description: 'No soft tissues were damaged')
+admission.observations.find_or_create_by(description: 'No soft tissues were damaged', moment: 'February 18, 2018 5:07pm'.to_datetime)
 
 admission.symptoms.find_or_create_by(description: 'limited bending of the joint')
 admission.symptoms.find_or_create_by(description: 'severe pain')

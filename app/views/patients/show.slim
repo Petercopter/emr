@@ -28,8 +28,9 @@ p.d-print-none.text-right= link_to icon('fas', 'print', 'Print'), 'javascript:wi
     p.font-weight-bold Summary
     p
       ' This #{@patient.age} years old #{@patient.gender} was admitted to
-      ' #{@patient.facility.name} on #{@admission_date}, at #{@admission_time}
-      ' due to #{@admission_diagnoses}. The observed symptoms on admission were #{@symptoms}.
+      ' #{@patient.facility.name} emergency facility on #{@admission_date}, at #{@admission_time}
+      ' due to #{@admission_diagnoses}. The observed symptoms on admission were #{@symptoms}. #{@observations}.
+    p
       ' Upon asking about known allergies, the patient disclosed #{@allergies}.
       ' Upon asking about chronic conditions, the patient disclosed #{@chronic_conditions}.
       ' The patient was administered with #{@medications}.

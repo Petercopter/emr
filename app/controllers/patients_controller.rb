@@ -7,7 +7,7 @@ class PatientsController < ApplicationController
 
   def show
     @admission_date = @patient.admission.moment.to_date.to_formatted_s(:long)
-    @admission_time = @patient.admission.moment.strftime('%l:%M%P')
+    @admission_time = @patient.admission.moment.strftime('%l:%M %P')
     @admission_diagnoses = @patient.admission.diagnoses.map do |diagnosis|
       [
         diagnosis.description,
@@ -27,7 +27,7 @@ class PatientsController < ApplicationController
       [
         diagnostic_procedure.description,
         'at',
-        diagnostic_procedure.moment.strftime('%l:%M%P')
+        diagnostic_procedure.moment.strftime('%l:%M %P')
       ].join(' ')
     end.to_sentence
 
@@ -64,6 +64,8 @@ class PatientsController < ApplicationController
         treatment.necessity
       ].join(' ')
     end.to_sentence
+
+    @observations = @patient.admission.observations.map(&:description).join(', ')
   end
 
   private
