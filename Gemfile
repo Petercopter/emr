@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bootstrap', '~> 4.2'
+gem 'font-awesome-sass', '~> 5.6'
 gem 'slim-rails', '~> 3.2'
 
 group :development, :test do
