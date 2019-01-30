@@ -35,7 +35,7 @@ patient.diagnoses.find_or_create_by(
 
 patient.diagnostic_procedures.find_or_create_by(
   description: 'an exploratory radiography',
-  moment: (1.month.ago + 1.hour)
+  moment: 'February 18, 2018 5:15pm'.to_datetime
 )
 
 patient.medications.find_or_create_by(
@@ -61,7 +61,10 @@ patient.treatments.find_or_create_by(
   necessity: 'restrict the motion'
 )
 
-admission = Admission.find_or_create_by(moment: 1.month.ago, patient: patient)
+admission = Admission.find_or_create_by(
+  moment: 'February 18, 2018 5:07pm'.to_datetime,
+  patient: patient
+)
 
 admission.diagnoses.find_or_create_by(
   coding_system: 'S',
