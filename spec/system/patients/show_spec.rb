@@ -52,11 +52,14 @@ describe 'GET #show' do
   let!(:diagnosis_asthma) { create :diagnosis, code: '45', coding_system: 'J', description: 'Asthma', diagnoseable: patient }
   let!(:diagnosis) { create :diagnosis, diagnoseable: patient }
 
-  before {
-    binding.pry
-    get patient_path(patient) }
+  before { visit patient_path(patient) }
 
   it do
     expect(page).to have_selector('.facility-name', text: facility.name)
+    expect(page).to have_selector('.patient-first-name', text: patient.first_name)
+    expect(page).to have_selector('.patient-last-name', text: patient.last_name)
+    expect(page).to have_selector('.patient-mr', text: patient.mr)
+    expect(page).to have_selector('.summary', text: 'This 43 years old male was admitted to Blue Alps Ski Camp on February 18, 2018, at 5:07pm due to a fracture of upper end of the right tibia (S82.101). The observed symptoms on admission were limited bending of the joint, severe pain, and swelling. Upon asking about known allergies, the patient disclosed hypersensitivity to aspirin or NSAIDs and gluten intolerance. Upon asking about chronic conditions, the patient disclosed Asthma (J45). The patient was administered with Acetaminophen 500mg PO q4hr to relieve pain and Naproxen 500mg PO q6hr to relieve swelling.')
+    expect(page).to have_selector('.summary', text: 'The staff performed an exploratory radiography at 5:15pm, revealing a closed fracture in the right tibia (S82.101A). Our team proceeded to temporary bracing the right leg to restrict the motion.')
   end
 end
