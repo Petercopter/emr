@@ -6,6 +6,7 @@ FactoryBot.define do
     mr { "MyString" }
     dob { "2019-01-29 10:16:48" }
     gender { 1 }
-    admission { nil }
+
+    facility
   end
 end
