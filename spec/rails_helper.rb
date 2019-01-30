@@ -67,6 +67,8 @@ RSpec.configure do |config|
   end
 end
 
+Capybara.server = :puma, { Silent: true }
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.library :rails
