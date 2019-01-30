@@ -1,11 +1,10 @@
 FactoryBot.define do
   factory :patient do
-    first_name { "MyString" }
-    middle_name { "MyString" }
-    last_name { "MyString" }
-    mr { "MyString" }
-    dob { "2019-01-29 10:16:48" }
-    gender { 1 }
+    dob { 43.years.ago }
+    first_name { 'Thomas' }
+    gender { 'male' }
+    last_name { 'Schudel' }
+    mr { '30997' }
 
     facility
   end

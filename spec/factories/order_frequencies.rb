@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :order_frequency do
-    value { "MyString" }
-    unit { 1 }
+    value { 'q4' }
+    unit { 'hr' }
   end
 end

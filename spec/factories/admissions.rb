@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :admission do
-    moment { "2019-01-29 10:15:01" }
+    moment { 'February 18, 2018 5:07pm'.to_datetime }
   end
 end

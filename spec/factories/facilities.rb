@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :facility do
-    name { "MyString" }
+    name { 'Blue Alps Ski Camp' }
   end
 end

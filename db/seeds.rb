@@ -7,13 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 facility = Facility.find_or_create_by(name: 'Blue Alps Ski Camp')
+
 order_frequency_q4hr = OrderFrequency.find_or_create_by(unit: 'hr', value: 'q4')
 order_frequency_q6hr = OrderFrequency.find_or_create_by(unit: 'hr', value: 'q6')
 
 patient = facility.patients.find_or_create_by(
   first_name: 'Thomas',
   gender: 'male',
-  dob: 43.years.ago,
+  dob: 'Fri, 30 Jan 1976',
   last_name: 'Schudel',
   mr: '30997'
 )
@@ -28,8 +29,8 @@ patient.chronic_conditions.find_or_create_by(
 )
 
 patient.diagnoses.find_or_create_by(
-  coding_system: 'S',
   code: '82.101A',
+  coding_system: 'S',
   description: 'a closed fracture in the right tibia'
 )
 
@@ -67,13 +68,13 @@ admission = Admission.find_or_create_by(
 )
 
 admission.diagnoses.find_or_create_by(
-  coding_system: 'S',
   code: '82.101',
+  coding_system: 'S',
   description: 'a fracture of upper end of the right tibia'
 )
 
 admission.observations.find_or_create_by(description: 'No soft tissues were damaged')
 
+admission.symptoms.find_or_create_by(description: 'limited bending of the joint')
 admission.symptoms.find_or_create_by(description: 'severe pain')
 admission.symptoms.find_or_create_by(description: 'swelling')
-admission.symptoms.find_or_create_by(description: 'limited bending of the joint')

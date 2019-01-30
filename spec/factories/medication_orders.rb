@@ -1,9 +1,11 @@
 FactoryBot.define do
   factory :medication_order do
-    name { "MyString" }
-    unit { 1 }
-    dosage { "9.99" }
-    route { 1 }
-    order_frequency { nil }
+    dosage { '500mg' }
+    name { 'Acetaminophen' }
+    necessity { 'relieve pain' }
+    route { 'po' }
+    unit { 'mg' }
+
+    order_frequency
   end
 end

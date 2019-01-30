@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :allergy do
-    description { "MyString" }
+    description { 'gluten intolerance' }
   end
 end

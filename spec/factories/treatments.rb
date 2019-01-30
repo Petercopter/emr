@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :treatment do
-    description { "MyString" }
-    necessity { "MyString" }
+    description { 'temporary bracing the right leg' }
+    necessity { 'restrict the motion' }
   end
 end

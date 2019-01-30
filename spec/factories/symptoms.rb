@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :symptom do
-    description { "MyString" }
+    description { 'severe pain' }
   end
 end
